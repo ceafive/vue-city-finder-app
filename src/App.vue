@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="mx-10">
+      <Header></Header>
+      <div
+        class="contain flex flex-wrap justify-center p-12 border border-gray-400"
+      >
+        <SearchBar></SearchBar>
+        <CityDetails></CityDetails>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
+import CityDetails from "./components/CityDetails";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    Header,
+    SearchBar,
+    CityDetails
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.contain {
+  height: 85vh;
 }
 </style>
