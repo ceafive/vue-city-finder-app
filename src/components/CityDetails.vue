@@ -4,7 +4,7 @@
     class="flex flex-wrap sm:w-full lg:w-2/3 items-center animated zoomIn text-center leading-none"
     style="backgroundColor:#f81e1d;"
   >
-    <div class="w-full font-bold text-6xl">
+    <div class="w-full font-semibold text-6xl">
       {{ cityData["places"][0]["place name"] }}
     </div>
     <div class="w-full text-4xl">
