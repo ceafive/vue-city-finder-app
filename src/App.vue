@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-10">
+  <div class="mx-6">
     <Header></Header>
     <div class="flex flex-wrap border border-gray-400">
       <SearchBar></SearchBar>
