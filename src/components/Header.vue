@@ -1,23 +1,27 @@
 <template>
-  <div class="flex justify-between items-center sm:my-6 lg:my-4">
-    <div class="flex-shrink text-3xl">
-      <span class="font-thin">City Finder App</span>
+  <div class="flex flex-wrap justify-between items-center my-2">
+    <div class="sm:w-full lg:w-1/3">
+      <span class="font-thin sm:text-sm lg:text-3xl">City Finder App</span>
     </div>
-    <div class="flex-shrink sm:text-sm">
-      <span
-        >Your IP: <span class="text-green-500 mr-1">{{ ipData.ip }}</span></span
-      >
+    <div
+      class="flex flex-wrap sm:w-full lg:w-2/3 lg:justify-end items-center sm:text-xs lg:text-base"
+    >
+      <span>
+        IP: <span class="text-green-500 mr-1">{{ ipData.ip }}</span>
+      </span>
       <span
         >ISP: <span class="text-green-500 mr-1">{{ ipData.isp }}</span></span
       >
-      <span
-        >City: <span class="text-green-500 mr-1">{{ ipData.city }}</span></span
-      >
+
       <span
         >Country:
         <span class="text-green-500 mr-1">{{ ipData.country_name }}</span></span
       >
-      <img class="inline h-4" :src="ipData.country_flag" alt="country_flag" />
+      <img
+        class="inline h-4"
+        :src="ipData.country_flag"
+        :alt="ipData.country_name"
+      />
     </div>
   </div>
 </template>

@@ -1,22 +1,21 @@
 <template>
   <div
     v-if="cityData"
-    class="flex flex-wrap sm:w-full lg:w-2/3 items-center animated zoomIn text-center leading-none"
-    style="backgroundColor:#f81e1d;"
+    class="flex flex-wrap w-full bg-appRed1 items-center text-center sm:mx-4 lg:mx-40 py-4 mb-20 lg:leading-loose"
   >
-    <div class="w-full font-semibold text-6xl">
+    <div class="w-full font-semibold sm:text-4xl lg:text-6xl">
       {{ cityData["places"][0]["place name"] }}
     </div>
-    <div class="w-full text-4xl">
+    <div class="w-full sm:text-2xl text-4xl">
       {{ cityData["places"][0]["state"] }}
     </div>
-    <div class="w-full text-4xl">
+    <div class="w-full sm:text-2xl text-4xl">
       {{ cityData["places"][0]["state abbreviation"] }}
     </div>
-    <div class="w-full text-4xl">
+    <div class="w-full sm:text-2xl text-4xl">
       {{ cityData["post code"] }}
     </div>
-    <div class="w-full text-4xl">
+    <div class="w-full sm:text-2xl text-4xl">
       {{ cityData["country"] }}
     </div>
   </div>

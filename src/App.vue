@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
-    <div class="mx-10">
-      <Header></Header>
-      <div
-        class="contain flex flex-wrap justify-center p-12 border border-gray-400"
-      >
-        <SearchBar></SearchBar>
-        <CityDetails></CityDetails>
-      </div>
+  <div class="mx-10">
+    <Header></Header>
+    <div class="flex flex-wrap border border-gray-400">
+      <SearchBar></SearchBar>
+      <CityDetails></CityDetails>
+    </div>
+    <div class="text-center my-2 font-thin">
+      Coded with <span class="text-red-700 text-xl">&hearts;</span> by Castro
+      Agbo. 2019 &reg;
     </div>
   </div>
 </template>
@@ -26,13 +26,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-body {
-  font-family: "Raleway", sans-serif;
-}
-
-.contain {
-  height: 85vh;
-}
-</style>
