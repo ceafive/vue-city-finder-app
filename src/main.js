@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
 import "./assets/css/styles.css";
+import animate from 'animate.css'
 
 Vue.config.productionTip = false;
 

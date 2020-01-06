@@ -3,10 +3,11 @@
     <Header></Header>
     <div class="flex flex-wrap border border-gray-400">
       <SearchBar></SearchBar>
-      <CityDetails></CityDetails>
+      <CityDetails class="animated fadeInRightBig"></CityDetails>
     </div>
     <div class="text-center my-2 font-thin">
-      Coded with <span class="text-red-700 text-xl">&hearts;</span> by Castro
+      Coded with
+      <span class="text-red-700 text-xl">&hearts;</span> by Castro
       Agbo. 2019 &reg;
     </div>
   </div>

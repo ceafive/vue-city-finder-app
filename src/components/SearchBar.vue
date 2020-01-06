@@ -17,21 +17,17 @@
       <button
         @click="searchZip"
         class="bg-green-500 focus:outline-none hover:bg-green-700 text-white sm:px-2 lg:px-12 py-2 sm:mr-2"
-      >
-        Submit
-      </button>
+      >Submit</button>
       <button
         @click="randomCity"
         class="bg-blue-500 focus:outline-none hover:bg-blue-700 text-white sm:px-2 lg:px-12 py-2"
-      >
-        Randomize
-      </button>
+      >Randomize</button>
     </div>
   </div>
 </template>
 
 <script>
-import zipcodes from "zipcodes";
+import zipcodes from "../data/zipcodes";
 export default {
   data() {
     return {
@@ -53,12 +49,8 @@ export default {
     },
     randomCity() {
       this.zip = null;
-      let zipObj = zipcodes.random();
-      this.randomZip = zipObj.zip;
-      if (this.randomZip.length < 5) {
-        zipObj = zipcodes.random();
-        this.randomZip = zipObj.zip;
-      }
+      this.randomZip = zipcodes[Math.floor(Math.random() * zipcodes.length)];
+      console.log(this.randomZip);
 
       this.$store.dispatch("fetchCity", this.randomZip);
     }

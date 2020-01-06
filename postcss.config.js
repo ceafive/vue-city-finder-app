@@ -11,7 +11,8 @@ module.exports = {
     }),
     purgecss({
       content: ["./public/*html", "./src/*.vue", "./src/components/*.vue"],
-      defaultExtractor: content => content.match(/[A-Za-z)-9-_:/]+/g) || []
+      defaultExtractor: content =>
+        content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
     }),
     autoprefixer
   ]
