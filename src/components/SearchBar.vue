@@ -50,7 +50,6 @@ export default {
     randomCity() {
       this.zip = null;
       this.randomZip = zipcodes[Math.floor(Math.random() * zipcodes.length)];
-      console.log(this.randomZip);
 
       this.$store.dispatch("fetchCity", this.randomZip);
     }
