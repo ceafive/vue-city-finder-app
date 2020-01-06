@@ -1,7 +1,7 @@
 const tailwindcss = require("tailwindcss");
 const purgecss = require("@fullhuman/postcss-purgecss");
 const cssnano = require("cssnano");
-const autoprefixer = require("autoprefixer");
+
 
 module.exports = {
   plugins: [
@@ -14,6 +14,6 @@ module.exports = {
       defaultExtractor: content =>
         content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
     }),
-    autoprefixer
+
   ]
 };
