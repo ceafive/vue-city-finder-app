@@ -6,10 +6,10 @@
     <div
       class="w-full font-semibold sm:text-4xl lg:text-6xl"
     >{{ cityData["places"][0]["place name"] }}</div>
-    <div class="w-full sm:text-2xl lg:text-4xl">{{ cityData["places"][0]["state"] }}</div>
-    <div class="w-full sm:text-2xl lg:text-4xl">{{ cityData["places"][0]["state abbreviation"] }}</div>
-    <div class="w-full sm:text-2xl lg:text-4xl">{{ cityData["post code"] }}</div>
-    <div class="w-full sm:text-2xl lg:text-4xl">{{ cityData["country"] }}</div>
+    <div class="w-full text-2xl">{{ cityData["places"][0]["state"] }}</div>
+    <div class="w-full text-2xl">{{ cityData["places"][0]["state abbreviation"] }}</div>
+    <div class="w-full text-2xl">{{ cityData["post code"] }}</div>
+    <div class="w-full text-2xl">{{ cityData["country"] }}</div>
   </div>
 </template>
 
