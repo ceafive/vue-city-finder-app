@@ -30,11 +30,11 @@ const mutations = {
 };
 
 const actions = {
-  fetchCity: ({ commit }, zipCode) => {
-    commit("FETCH_CITY", zipCode);
-  },
   ipInfo: ({ commit }, apiKey) => {
     commit("IP_INFO", apiKey);
+  },
+  fetchCity: ({ commit }, zipCode) => {
+    commit("FETCH_CITY", zipCode);
   }
 };
 
@@ -56,9 +56,4 @@ const store = new Vuex.Store({
 
 export default store;
 
-new Vuex.Store({
-  state,
-  mutations,
-  actions,
-  getters
-});
+
