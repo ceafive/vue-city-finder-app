@@ -5,7 +5,7 @@
       <SearchBar></SearchBar>
       <CityDetails class="animated fadeInRightBig"></CityDetails>
     </div>
-    <div class="text-center my-2 font-thin">
+    <div class="text-center font-thin">
       Coded with
       <span class="text-red-700 text-xl">&hearts;</span> by Castro
       Agbo. 2019 &reg;

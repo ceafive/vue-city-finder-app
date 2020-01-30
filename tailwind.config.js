@@ -11,7 +11,7 @@ module.exports = {
         "80": "20rem"
       },
       screens: {
-        sm: "375px"
+        sm: "360px"
       }
     }
   },

@@ -1,7 +1,7 @@
 <template>
   <div
     class="flex flex-wrap w-full sm:px-16 lg:px-40"
-    :class="[marginLogic ? 'sm:mt-64 lg:mt-48 mb-10' : 'my-80']"
+    :class="[marginLogic ? 'sm:mt-48 sm:mb-24 lg:mt-48 lg:mb-10' : 'my-80']"
   >
     <div class="flex w-full justify-center text-xl font-thin">
       <label class="w-1/10 sm:text-xl lg:text-2xl">Zipcode:</label>

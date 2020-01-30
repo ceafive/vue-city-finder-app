@@ -1,5 +1,4 @@
 const tailwindcss = require("tailwindcss");
-const purgecss = require("@fullhuman/postcss-purgecss");
 const cssnano = require("cssnano");
 
 
@@ -9,11 +8,10 @@ module.exports = {
     cssnano({
       preset: "default"
     }),
-    purgecss({
+    process.env.NODE_ENV === 'production' && require('@fullhuman/postcss-purgecss')({
       content: ["./public/*html", "./src/*.vue", "./src/components/*.vue"],
       defaultExtractor: content =>
         content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
     }),
-
   ]
 };

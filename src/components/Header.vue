@@ -1,9 +1,11 @@
 <template>
   <div class="flex flex-wrap justify-between items-center my-2">
     <div class="flex sm:w-full lg:w-1/3 sm:justify-center lg:justify-start">
-      <span class="font-thin sm:text-sm lg:text-3xl">City Finder App</span>
+      <span class="font-thin sm:text-2xl lg:text-3xl">City Finder App</span>
     </div>
-    <div class="flex flex-wrap lg:w-2/3 lg:justify-end items-center sm:text-xs lg:text-base">
+    <div
+      class="flex flex-wrap sm:w-full lg:w-2/3 sm:justify-center lg:justify-end items-center sm:text-xs lg:text-base"
+    >
       <span>
         IP:
         <span class="text-green-500 mr-1">{{ ipData.ip }}</span>
@@ -12,12 +14,11 @@
         ISP:
         <span class="text-green-500 mr-1">{{ ipData.isp }}</span>
       </span>
-
       <span>
         Country:
         <span class="text-green-500 mr-1">{{ ipData.country_name }}</span>
       </span>
-      <img class="inline h-4" :src="ipData.country_flag" :alt="ipData.country_name" />
+      <img class="h-2" :src="ipData.country_flag" :alt="ipData.country_name" />
     </div>
   </div>
 </template>
