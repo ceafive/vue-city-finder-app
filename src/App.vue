@@ -17,9 +17,12 @@
 export default {
   name: "app",
   components: {
-    Header: () => import("./components/Header"),
-    SearchBar: () => import("./components/SearchBar"),
-    CityDetails: () => import("./components/CityDetails")
+    Header: () =>
+      import(/* webpackChunkName: "header" */ "./components/Header"),
+    SearchBar: () =>
+      import(/* webpackChunkName: "searchbar" */ "./components/SearchBar"),
+    CityDetails: () =>
+      import(/* webpackChunkName: "citydetails" */ "./components/CityDetails")
   }
 };
 </script>
