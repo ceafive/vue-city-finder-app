@@ -14,16 +14,12 @@
 </template>
 
 <script>
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import CityDetails from "./components/CityDetails";
-
 export default {
   name: "app",
   components: {
-    Header,
-    SearchBar,
-    CityDetails
+    Header: () => import("./components/Header"),
+    SearchBar: () => import("./components/SearchBar"),
+    CityDetails: () => import("./components/CityDetails")
   }
 };
 </script>
