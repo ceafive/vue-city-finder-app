@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        appRed1: "#f81e1d"
+        appRed1: "#a81e1d"
       },
       fontFamily: {
         body: ["Raleway"]
