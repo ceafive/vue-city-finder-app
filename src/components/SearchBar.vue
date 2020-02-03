@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { zipcodes } from "../data/zipcodes";
+import zipcodes from "../data/zipcodes";
 export default {
   data() {
     return {

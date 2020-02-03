@@ -6,12 +6,16 @@ module.exports = {
   plugins: [
     tailwindcss("./tailwind.config.js"),
     cssnano({
-      preset: "default"
+      preset: ['default', {
+        discardComments: {
+          removeAll: true,
+        },
+      }]
     }),
     process.env.NODE_ENV === 'production' && require('@fullhuman/postcss-purgecss')({
       content: ["./public/*html", "./src/*.vue", "./src/components/*.vue"],
       defaultExtractor: content =>
-        content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
+        content.match(/[A-Za-z0-9-_:\/]+/g) || []
     }),
   ]
 };

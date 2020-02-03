@@ -23,6 +23,9 @@ export default {
       import(/* webpackChunkName: "searchbar" */ "./components/SearchBar"),
     CityDetails: () =>
       import(/* webpackChunkName: "citydetails" */ "./components/CityDetails")
+  },
+  beforeCreate() {
+    document.body.className = "font-body bg-black text-white";
   }
 };
 </script>
