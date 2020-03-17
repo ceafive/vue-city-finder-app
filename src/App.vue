@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="flex flex-wrap border border-gray-400">
       <SearchBar></SearchBar>
-      <CityDetails class="animated fadeInRightBig"></CityDetails>
+      <CityDetails></CityDetails>
     </div>
     <div class="text-center font-thin">
       Coded with
@@ -23,9 +23,6 @@ export default {
       import(/* webpackChunkName: "searchbar" */ "./components/SearchBar"),
     CityDetails: () =>
       import(/* webpackChunkName: "citydetails" */ "./components/CityDetails")
-  },
-  beforeCreate() {
-    document.body.className = "font-body bg-black text-white";
   }
 };
 </script>

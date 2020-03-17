@@ -3,9 +3,11 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-const state = {
-  ipData: "",
-  cityData: ""
+const state = () => {
+  return {
+    ipData: "",
+    cityData: ""
+  }
 };
 
 const mutations = {
