@@ -36,6 +36,9 @@ export default {
     };
   },
   computed: {
+    zipcodes() {
+      return Object.freeze(zipcodes);
+    },
     marginLogic() {
       if (typeof this.$store.getters.cityData === "object") {
         return true;
@@ -45,11 +48,13 @@ export default {
   methods: {
     searchZip() {
       this.$store.dispatch("fetchCity", this.zip);
-      this.zip = null;
+      this.zip = "";
     },
     randomCity() {
-      this.zip = null;
-      this.randomZip = zipcodes[Math.floor(Math.random() * zipcodes.length)];
+      this.zip = "";
+      this.randomZip = this.zipcodes[
+        Math.floor(Math.random() * this.zipcodes.length)
+      ];
       this.$store.dispatch("fetchCity", this.randomZip);
     }
   }
