@@ -11,32 +11,40 @@ const state = () => {
 };
 
 const mutations = {
-  async IP_INFO(state, apiKey) {
-    const res = await fetch(
-      `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`
-    );
-    state.ipData = await res.json();
+  IP_INFO(state, ipData) {
+    state.ipData = ipData
   },
-  async FETCH_CITY(state, zipCode) {
-    let isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
-    if (!isValidZip) {
-      return alert("Enter Valid US Zip Code");
-    }
-    const res = await fetch(`https://api.zippopotam.us/us/${zipCode}`);
-    if (res.status === 404) {
-      alert(`Zip Code ${zipCode} Not Valid!`);
-      return;
-    }
-    state.cityData = await res.json();
+  FETCH_CITY(state, cityData) {
+    state.cityData = cityData
   }
 };
 
 const actions = {
-  ipInfo: ({ commit }, apiKey) => {
-    commit("IP_INFO", apiKey);
+  ipInfo: async ({ commit }, apiKey) => {
+    const res = await fetch(
+      `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`
+    );
+    const ipData = await res.json();
+    commit("IP_INFO", ipData);
   },
-  fetchCity: ({ commit }, zipCode) => {
-    commit("FETCH_CITY", zipCode);
+  fetchCity: async ({ commit }, zipCode) => {
+    // commit("FETCH_CITY", cityData);
+    const isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
+    //throw errow when zipcode is not valid eg. not a US zipcode or longer than 5 digits
+    if (!isValidZip) return alert("Enter Valid US Zip Code");
+    try {
+      const res = await fetch(`https://api.zippopotam.us/us/${zipCode}`);
+      // console.log(res)
+      //throw error for when zipcode is not found
+      if (res.status === 404) {
+        alert(`Zip Code ${zipCode} Not Valid!`)
+        throw new Error(`Zip Code ${zipCode} Not Valid!`)
+      }
+      const cityData = await res.json();
+      commit("FETCH_CITY", cityData);
+    } catch (e) {
+      console.log(e)
+    }
   }
 };
 
