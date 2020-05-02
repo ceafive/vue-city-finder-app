@@ -27,16 +27,16 @@
 export default {
   data() {
     return {
-      apiKey: process.env.VUE_APP_APIKEY
+      apiKey: process.env.VUE_APP_APIKEY,
     };
   },
   computed: {
     ipData() {
       return this.$store.getters.ipData;
-    }
+    },
   },
-  created() {
+  mounted() {
     this.$store.dispatch("ipInfo", this.apiKey);
-  }
+  },
 };
 </script>
