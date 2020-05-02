@@ -54,7 +54,9 @@ export default {
     randomCity() {
       this.zip = "";
       (async () => {
-        const module = await import("../data/zipcodes");
+        const module = await import(
+          /* webpackChunkName: "zipcodes" */ "../data/zipcodes"
+        );
         const zipcodes = module.default;
         const rando = Math.floor(Math.random() * zipcodes.length);
         const randomZip = Object.freeze(zipcodes)[rando];
