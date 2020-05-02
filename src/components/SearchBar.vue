@@ -17,33 +17,34 @@
       <button
         @click="searchZip"
         class="bg-green-500 focus:outline-none hover:bg-green-700 text-white sm:px-2 lg:px-12 py-2 sm:mr-2"
-      >Submit</button>
+      >
+        Submit
+      </button>
       <button
         @click="randomCity"
         class="bg-blue-500 focus:outline-none hover:bg-blue-700 text-white sm:px-2 lg:px-12 py-2"
-      >Randomize</button>
+      >
+        Randomize
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import zipcodes from "../data/zipcodes";
 export default {
   data() {
     return {
       zip: "",
-      randomZip: ""
+      zips: [90210],
     };
   },
   computed: {
     zipcodes() {
-      return Object.freeze(zipcodes);
+      return Object.freeze(this.zips);
     },
     marginLogic() {
-      if (typeof this.$store.getters.cityData === "object") {
-        return true;
-      }
-    }
+      return this.$store.getters.cityData;
+    },
   },
   methods: {
     searchZip() {
@@ -52,11 +53,14 @@ export default {
     },
     randomCity() {
       this.zip = "";
-      this.randomZip = this.zipcodes[
-        Math.floor(Math.random() * this.zipcodes.length)
-      ];
-      this.$store.dispatch("fetchCity", this.randomZip);
-    }
-  }
+      (async () => {
+        const module = await import("../data/zipcodes");
+        const zipcodes = module.default;
+        const rando = Math.floor(Math.random() * zipcodes.length);
+        const randomZip = Object.freeze(zipcodes)[rando];
+        this.$store.dispatch("fetchCity", randomZip);
+      })();
+    },
+  },
 };
 </script>

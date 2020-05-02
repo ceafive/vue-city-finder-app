@@ -1,22 +1,31 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+// const zipcodes = (async () => {
+//   try {
+//     const module = await import("../data/zipcodes");
+//     return module;
+//   } catch (e) {
+//     console.log(e.message);
+//   }
+// })();
+
 Vue.use(Vuex);
 
 const state = () => {
   return {
     ipData: "",
-    cityData: ""
-  }
+    cityData: "",
+  };
 };
 
 const mutations = {
   IP_INFO(state, ipData) {
-    state.ipData = ipData
+    state.ipData = ipData;
   },
   FETCH_CITY(state, cityData) {
-    state.cityData = cityData
-  }
+    state.cityData = cityData;
+  },
 };
 
 const actions = {
@@ -34,36 +43,33 @@ const actions = {
     if (!isValidZip) return alert("Enter Valid US Zip Code");
     try {
       const res = await fetch(`https://api.zippopotam.us/us/${zipCode}`);
-      // console.log(res)
       //throw error for when zipcode is not found
       if (res.status === 404) {
-        alert(`Zip Code ${zipCode} Not Valid!`)
-        throw new Error(`Zip Code ${zipCode} Not Valid!`)
+        alert(`Zip Code ${zipCode} Not Valid!`);
+        throw new Error(`Zip Code ${zipCode} Not Valid!`);
       }
       const cityData = await res.json();
       commit("FETCH_CITY", cityData);
     } catch (e) {
-      console.log(e)
+      console.log(e.message);
     }
-  }
+  },
 };
 
 const getters = {
-  ipData: state => {
+  ipData: (state) => {
     return state.ipData;
   },
-  cityData: state => {
+  cityData: (state) => {
     return state.cityData;
-  }
+  },
 };
 
 const store = new Vuex.Store({
   state,
   mutations,
   actions,
-  getters
+  getters,
 });
 
 export default store;
-
-

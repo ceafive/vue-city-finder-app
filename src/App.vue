@@ -1,9 +1,9 @@
 <template>
   <div class="mx-6">
-    <Header></Header>
+    <Header />
     <div class="flex flex-wrap border border-gray-400">
-      <SearchBar></SearchBar>
-      <CityDetails></CityDetails>
+      <SearchBar />
+      <CityDetails />
     </div>
     <div class="text-center font-thin">
       Coded with
